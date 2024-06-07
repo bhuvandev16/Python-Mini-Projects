@@ -1,20 +1,10 @@
 import smtplib
 import time
 from email.message import EmailMessage
-
-'''
-    ask sender email address
-    ask sender app password
-    ask receiver email address
-
-    ask the message and subject
-
-    ask if they want time limit - if yes - set time limit -- if no -> excute the function
-'''
-
+import ssl
 
 email_sender = str(input('Enter your email address : '))
-email_password = 'ceuo kbtn teup rljh'
+email_password = '{enter your app password}' #NOTE: Doesn't work with email password
 email_receiver = str(input('Enter receiver email address : '))
 subject = str(input("What's the subject :  "))
 message = str(input("What's the message : "))
@@ -28,8 +18,11 @@ msg['From'] = email_sender
 msg['To'] = email_receiver
 msg.set_content(message)
 
+
 def email_sent():
-    with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp_server:
+    context = ssl.create_default_context()
+    
+    with smtplib.SMTP_SSL('smtp.gmail.com', 465, context=context) as smtp_server:
         smtp_server.login(email_sender, email_password)
         smtp_server.sendmail(email_sender, email_receiver, msg.as_string())
 
