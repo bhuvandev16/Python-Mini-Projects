@@ -1,4 +1,4 @@
-# Email Sender Program in Python
+# Email Sender Program
 
 ## Overview
 
