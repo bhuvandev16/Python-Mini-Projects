@@ -1,0 +1,4 @@
+Hello, this is a sample text file.
+This file is used to demonstrate word replacement.
+Feel free to replace any word in this file.
+Enjoy experimenting with word replacement!
