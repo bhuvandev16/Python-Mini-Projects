@@ -26,7 +26,6 @@ def get_input_values():
         print('The given value cannot be calculated')
         quit()
         
-    
 
 
 def main():
